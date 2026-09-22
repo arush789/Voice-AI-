@@ -33,10 +33,7 @@ SUPABASE_URL="https://your-project.supabase.co"
 SUPABASE_SERVICE_KEY="your-supabase-service-key"
 ```
 
-### 3. Setup Database
-Run `supabase_schema.sql` in your Supabase SQL Editor.
-
-### 4. Run Server
+### 3. Run Server
 ```bash
 uvicorn app.main:app --reload
 ```
