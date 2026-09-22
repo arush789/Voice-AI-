@@ -139,8 +139,8 @@ def detect_keyword(feature):
 
     return probability
 
-import soundfile as sf
 import librosa
+from app.services.audio_loader import load_audio_16k
 
 
 TARGET_SAMPLE_RATE = 16000
@@ -151,25 +151,7 @@ HOP_LENGTH = 160
 
 def extract_keyword_feature(audio_path: str):
 
-    audio, sample_rate = sf.read(
-        audio_path,
-        dtype="float32"
-    )
-
-    # Stereo → mono
-    if audio.ndim > 1:
-
-        audio = audio.mean(axis=1)
-
-
-    # Resample → 16 kHz
-    if sample_rate != TARGET_SAMPLE_RATE:
-
-        audio = librosa.resample(
-            audio,
-            orig_sr=sample_rate,
-            target_sr=TARGET_SAMPLE_RATE
-        )
+    audio = load_audio_16k(audio_path)
 
 
     # Mel spectrogram

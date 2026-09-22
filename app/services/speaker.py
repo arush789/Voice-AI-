@@ -26,25 +26,12 @@ print("ECAPA model loaded!")
 print("Device:", DEVICE)
 
 
+from app.services.audio_loader import load_audio_16k
+
+
 def get_embedding(audio_path: str):
 
-    audio, sample_rate = sf.read(
-        audio_path,
-        dtype="float32"
-    )
-
-    # Convert stereo → mono
-    if audio.ndim > 1:
-        audio = audio.mean(axis=1)
-
-    # Convert to 16 kHz
-    if sample_rate != TARGET_SAMPLE_RATE:
-
-        audio = librosa.resample(
-            audio,
-            orig_sr=sample_rate,
-            target_sr=TARGET_SAMPLE_RATE
-        )
+    audio = load_audio_16k(audio_path)
 
     signal = torch.from_numpy(audio)
 
