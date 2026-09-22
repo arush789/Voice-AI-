@@ -7,7 +7,6 @@ ENV/
 # Environment variables & secrets (CRITICAL: Do not leak API keys)
 .env
 .env.*
-!.env.example
 
 # Python cache & compiled files
 __pycache__/
