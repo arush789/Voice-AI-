@@ -1,0 +1,29 @@
+# Virtual environment
+.venv/
+venv/
+env/
+ENV/
+
+# Environment variables & secrets (CRITICAL: Do not leak API keys)
+.env
+.env.*
+!.env.example
+
+# Python cache & compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Large datasets & archives (GitHub has a strict 100MB per file limit)
+evidence/
+datasets/librispeech/
+*.tar.gz
+*.tar
+*.zip
+*.tmp
+
+# IDE & Editor files
+.vscode/
+.idea/
+.agents/
