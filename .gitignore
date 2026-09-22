@@ -14,13 +14,18 @@ __pycache__/
 *$py.class
 *.so
 
-# Large datasets & archives (GitHub has a strict 100MB per file limit)
-evidence/
+# Datasets, training code & archives
+training/
 datasets/
+evidence/
 *.tar.gz
 *.tar
 *.zip
 *.tmp
+
+# Models: only upload the active rakhsha_keyword_cnn.pt model
+models/*
+!models/rakhsha_keyword_cnn.pt
 
 # IDE & Editor files
 .vscode/
