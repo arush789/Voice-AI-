@@ -16,7 +16,7 @@ __pycache__/
 
 # Large datasets & archives (GitHub has a strict 100MB per file limit)
 evidence/
-datasets/librispeech/
+datasets/
 *.tar.gz
 *.tar
 *.zip
